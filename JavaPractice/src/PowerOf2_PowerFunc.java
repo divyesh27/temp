@@ -1,4 +1,4 @@
-public class PowerOf2 {
+public class PowerOf2_PowerFunc {
 	public static void main(String[] args) {
 		int n=24;
 		System.out.println(powerOfTwo(n));
@@ -12,5 +12,18 @@ public class PowerOf2 {
 			n/=2;
 		}
 		return true;
+	}
+	
+	public static int power(int n, int m) {
+		if(m == 0) {
+			return 1;
+		}
+		int pow = power(n,m/2);
+		if(m % 2 == 0) {
+			return pow*pow;
+		}
+		else {
+			return n*pow*pow;
+		}
 	}
 }
