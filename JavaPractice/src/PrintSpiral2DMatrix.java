@@ -1,4 +1,9 @@
-
+/**
+ * Program to print Spiral anti clock wise as show in below figure.
+ * Time complexity O(row*col)
+ * @author divyesh.shah
+ *
+ */
 public class PrintSpiral2DMatrix {
 
 	// You are given two integers, width and height. Using width and height, draw a spiral to the screen.
@@ -14,148 +19,124 @@ public class PrintSpiral2DMatrix {
 	// 1 111111 1
 	// 1        1
 	// 1111111111
-    /*
-	
-	1111111111
-	1
-	1 11111111
-	1 1	 	 1
-	1 1 1111 1
-	1 1 11 1 1
-	1 1    1 1
-	1 111111 1	
-	1	 	 1
-	1111111111
-	
-	11111
-	1 
-	1 111
-	1   1
-	11111
-	*/
-	
+    
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 
-		printSpiralMatrix1(15,15);
+		//printSpiralMatrix(10,10);
+		//printSpiralMatrix(4,4);
+		//printSpiralMatrix(5,5);
+		//printSpiralMatrix(4,16);
+		//printSpiralMatrix(7,9);
+		//printSpiralMatrix(8,12);
+		//printSpiralMatrix(0,0);
+		//printSpiralMatrix(4,0);
+		//printSpiralMatrix(15,19);
+		printSpiralMatrix(5,15);
+		
 	}
 	
+	public static void printSpiralMatrix(int row, int col)
+	{
+		// Check for if any input is given 0 or -ve numbers then return
+		if(row <= 0 || col <= 0)
+			return;
+	    char[][] inputMatrix = new char[row][col];  // matrix to add 1 and ' '
+	    int left = 0;      // start of row index
+	    int up = 0;        // start of col index
+	    int right = inputMatrix[0].length-1; // end of col index
+	    int down = inputMatrix.length-1;     // end of row index
+	    int i;
+	    boolean flag = true;                 // flag to track alternative approach for 1 and ' '
+	    
+	    
+        // condition to make sure start index is less or equal to end index of col and row
+	    while(left <= right && up <= down) 
+	    {
+	    	if(flag)  // flag to add 1
+	    	{
+	    		// Add 1 to row from right to left index
+			    for (i = right; i >= left; i--) {
+		            inputMatrix[up][i] = '1';
+		        }
+			    up++;
+			    
+			    // Add 1 to left col from up to down index
+		        for (i = up; i <= down; i++) {
+		        	inputMatrix[i][left] = '1';
+		        }
+		        left++;
+		        
+		        // This is to add from left to right index from the down index
+		        // Also check for the last iteration when the up and down is equal
+		        // we want to add space.
+		        if(left <= right) {
+		        	for(i = left; i <= right; i++) {
+		        		if(up == down) {
+		        			inputMatrix[down][i] = ' ';
+		        		}
+		        		else {
+		        			inputMatrix[down][i] = '1';
+		        		}
+	        		}
+	        	}
+		        down--;
+		        // This is to add from down index to up index on right most col.
+		    	for(i = down; i >= up; i--) {
+	        		inputMatrix[i][right] = '1';
+	        	}
+		        right--;
+		    
+		        flag = false; // set flag to iterate for space
+		    }
+	    	else {
+	    		// This is to add alternative one with space from
+	    		// right to left index for row
+	    		for (i = right+1; i >= left; i--) {
+		            inputMatrix[up][i] = ' ';
+		        }
+			    up++;
+			    
+			    // This is to add alternative one with space from
+	    		// up to down on left cols
+		        for (i = up; i <= down; i++) {
+		        	inputMatrix[i][left] = ' ';
+		        }
+		        left++;
+		        
+		        // This is to add alternative one with space from
+	    		// right to left index for down row
+		       	for(i = left; i <= right; i++) {
+		        		inputMatrix[down][i] = ' ';
+		        	}
+		        down--;
+		        
+		        // This is to add alternative one with space from
+		        // down to up index for right col.
+		        // and Add 1 to end of it overwrite with 1.
+		        if(up <= down) {
+		        	for(i = down; i >= up; i--) {
+		        		inputMatrix[i][right] = ' ';
+		        	}
+		        	inputMatrix[i+1][right]= '1';
+		        }
+		        right--;
+	    		flag = true;
+	    	}
+	    }	
+	    // Call print function with updated matrix
+        print(inputMatrix);
+	}
 
-	public static void print(int[][] matrix) {
+	// Print entire matrix with all given values of 1 and space.
+	public static void print(char[][] matrix) {
 		for(int i=0; i < matrix.length; i++) {
 			for(int j=0; j < matrix[0].length; j++) {
-				System.out.print(" " + matrix[i][j] + " ");
+				System.out.print(matrix[i][j]);
 			}
 			System.out.println();
 		}
 	}
-	public static void printSpiralMatrix(int row, int col)
-	{
-	    int[][] inputMatrix = new int[row][col];
-	    int j=0;
-	    int k=0;
-	    int i;
-	    
-	    for(i=0; i<row; i++) {
-	      for(j=0; j<col; j++) {
-	        inputMatrix[i][j] = 1;
-	      }
-	    }
-	    //print(inputMatrix);
-	    i = j = 0;
-	    while (k < row && j < col)
-	    {
-	        // Print the first row from the remaining rows
-	        for (i = j; i < col; ++i)
-	        {
-	            inputMatrix[k][i] = 1;
-	        }
-	        k++;
-	        
-	        // Print the last column from the remaining columns 
-	        for (i = k; i < row; ++i)
-	        {
-	        	inputMatrix[i][col-1] = 1;
-	        }
-	        col--;
-	
-	        // Print the last row from the remaining rows 
-	        if ( k < row)
-	        {
-	            for (i = row-1; i >= k; --i)
-	            {
-	                inputMatrix[row-1][i] = 1;
-	            }
-	            row--;
-	        }
-	        
-	        // Print the first column from the remaining columns 
-	        if (j < col)
-	        {
-	            for (i = col-1; i >= j; --i)
-	            {
-	                inputMatrix[i][j] = 1;
-	                
-	            }
-	            j++;    
-	        }  
-	        
-	    }
-	    print(inputMatrix);
-					   
-	}
-	
-	public static void printSpiralMatrix1(int row, int col)
-	{
-	    int[][] inputMatrix = new int[row][col];
-	    int left = 0;
-	    int up = 0;
-	    int right = col-1;
-	    int down = row-1;
-	    int i;
-	    
-	    /*
-	    for(i=0; i<row; i++) {
-	      for(j=0; j<col; j++) {
-	        inputMatrix[i][j] = 1;
-	      }
-	    }*/
-	    //print(inputMatrix);
-	   // i = j = 0;
-        // Print the first row from the remaining rows
-	    while(left <= right && up <= down) {
-		    for (i = left; i <= right; i++)
-	        {
-	            inputMatrix[up][i] = 1;
-	        }
-		    up=up+2;
-		    //print(inputMatrix);
-		    // Print the last column from the remaining columns 
-	        for (i = up; i <= down; i++)
-	        {
-	        	inputMatrix[i][right] = 1;
-	        }
-	        right=right-2;
-	        //print(inputMatrix);
-	        
-	        if(left <= right) {
-	        	for(i = down; i > up; i--) {
-	        		inputMatrix[i][left] = 1;
-	        	}
-	        }
-	        //print(inputMatrix);
-	        
-	        down=down-2;
-	        if(up <= down) {
-	        	for(i = right; i >= left; i--) {
-	        		inputMatrix[down][i] = 1;
-	        	}
-	        }
-	        left = left+2;
-	    }	
-       
-        
-        
-	    print(inputMatrix);
-	}
 }
+	
+	
