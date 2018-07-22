@@ -23,7 +23,7 @@ public class PrintSpiral2DMatrix {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 
-		//printSpiralMatrix(10,10);
+		printSpiralMatrix(10,10);
 		//printSpiralMatrix(4,4);
 		//printSpiralMatrix(5,5);
 		//printSpiralMatrix(4,16);
@@ -32,7 +32,8 @@ public class PrintSpiral2DMatrix {
 		//printSpiralMatrix(0,0);
 		//printSpiralMatrix(4,0);
 		//printSpiralMatrix(15,19);
-		printSpiralMatrix(5,15);
+		//printSpiralMatrix(5,15);
+		
 		
 	}
 	

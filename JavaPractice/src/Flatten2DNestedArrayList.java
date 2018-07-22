@@ -1,21 +1,24 @@
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Map;
+import java.util.stream.Collectors;
 
 public class Flatten2DNestedArrayList implements Iterator<Integer> {
 
-	private List<Integer> flattenlist;
+	private List<String> flattenlist;
 	private Iterator<Integer> iter;
 	
-	public Flatten2DNestedArrayList(List<Flatten2DNestedArrayList> nestlist) {
-		flattenlist = new ArrayList<>();
+	public Flatten2DNestedArrayList(Map<String, List<String>> map) {
+		map.values().forEach(flattenlist::addAll);
 		
+		flattenlist = map.values().stream().flatMap(c -> c.stream()).collect(Collectors.toList());
+				
 	}
 	
-	private void flattenlist(List<Flatten2DNestedArrayList> list) {
-		
-	}
+	
 	@Override
 	public boolean hasNext() {
 		// TODO Auto-generated method stub
