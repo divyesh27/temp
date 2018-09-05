@@ -39,8 +39,8 @@ public class IndexOf {
 
     public static void main (String[] args)
     {
-    	String s1="abcs";
-    	String s2="cs";
+    	String s1="Hello World!";
+    	String s2="He";
     	int r1 = myIndexOf(s1.toCharArray(), s2.toCharArray());
     	System.out.println("r1 - - - "+r1);
 //        // Empty string

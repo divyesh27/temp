@@ -4,14 +4,20 @@ public class FindReplace {
 	
 	public static void main(String args[])
 	{
-		String s1="Jinal shah";
+		//String s1="Jinal shahJi Ji";
+		//String s1="JiJiJiJiJi";
+		String s1 ="Jinal Ji shahJi jiki JiKi";
 		String f="Ji";
-		String r="k";
+		String r="ki";
 		char[] s=s1.toCharArray();
 		char[] find=f.toCharArray();
 		char[] replace=r.toCharArray();
 	//	boolean flag=findreplace(s,find,replace);
-		System.out.println("flag=" +  replace(s1, f, r));
+		//System.out.println("flag=" +  replace(s1, f, r));
+		for(char c : findReplace(find, replace, s1)) {
+			System.out.print(c);
+		}
+		
 		
 		
 	}
@@ -74,4 +80,34 @@ public class FindReplace {
 	        return result;
 	    }
 
+	 public static char[] findReplace(char[] find, char[] replace, String theString) {
+		 
+		 if(find == null || replace == null || theString == null)
+			 return null;
+		 
+		 if(find.length != replace.length)
+			 throw new IllegalArgumentException("Invalid input");
+		 
+		 char [] result = theString.toCharArray();
+		 
+		 for(int i=0; i<result.length;) {
+			 int j=0;
+			 int start=i;
+			 while(j < find.length && result[start] == find[j]) {
+				 start++;
+				 j++;
+			 }
+			 if(j == find.length) {
+				 start = i;
+				 j = 0;
+				 while(j < find.length) {
+					 result[start++] = replace[j++];
+				 }
+				 i = start;
+			 }
+			 else
+				 i++;
+		 }
+		 return result;
+	 }
 }

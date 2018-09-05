@@ -15,7 +15,7 @@ public class BinaryTreeMirrorAndSymmtericTree {
 	Node a, b, root;
 	
 	public boolean treeMirror(Node a, Node b) {
-		if(a == null & b == null)
+		if(a == null && b == null)
 			return true;
 		if(a == null || b == null)
 			return false;

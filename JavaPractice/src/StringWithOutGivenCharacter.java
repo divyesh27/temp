@@ -15,7 +15,7 @@ public class StringWithOutGivenCharacter {
 			if(str.charAt(i) != c)
 				sb.append(str.charAt(i));
 		}
-		return new String(sb);
+		return sb.toString();
 	}
 
 }
