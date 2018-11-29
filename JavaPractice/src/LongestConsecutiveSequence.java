@@ -6,7 +6,9 @@ public class LongestConsecutiveSequence {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		int [] num = {100, 4, 200, 1, 3, 2};
+		//int [] num = {100, 4, 200, 1, 3, 2};
+	//	int num[] = {1, 9, 3, 10, 4, 20, 2};
+		int num[] = {36, 41, 56, 35, 44, 33, 34, 92, 43, 32, 42};
 		System.out.println(LongestConSequence(num));
 	}
 	

@@ -16,11 +16,11 @@ public class DeleteMultipleCharOccurrenceInSequence {
 	{
 		if(str == null || str.length() == 0)
 			return null;
-		char last = '\u0000';
+		char last = Character.MIN_VALUE; //char last = '\u0000';
 		StringBuilder sb = new StringBuilder();
 		for(char c : str.toCharArray())
 		{
-			if(last == '\u0000' || c!= last)
+			if(last == Character.MIN_VALUE || c!= last)
 			{
 				sb.append(c);
 				last = c;

@@ -17,7 +17,7 @@ public class ReverseLinkedList {
 	Node ReverseList(Node node)
 	{
 		Node prev = null;
-		Node current = head;
+		Node current = node;
 		Node next = null;
 		while(current != null)
 		{
@@ -60,7 +60,8 @@ public class ReverseLinkedList {
 		
 		System.out.println("Original Linked list is :");
         rl.printlist(head);
-        head = rl.reverse(head);
+       // head = rl.reverse(head);
+        head = rl.ReverseList(head);
         System.out.println("");
         System.out.println("Reversed linked list : ");
         rl.printlist(head);

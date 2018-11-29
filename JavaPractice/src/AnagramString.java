@@ -7,6 +7,7 @@ public class AnagramString {
 		// TODO Auto-generated method stub
 		System.out.println(CheckAnagram("divyesh","jinal"));
 		System.out.println(CheckAnagram("ljani","jinal"));
+		System.out.println(groupAnagrams(new String[] {"are","bat","ear","code","tab","era"}));
 	}
 	private static boolean CheckAnagram(String str1, String str2)
 	{
@@ -37,6 +38,23 @@ public class AnagramString {
 				return false;
 		}
 		return true;
+	}
+	
+	static List<List<String>> groupAnagrams(String [] inputString) {
+		
+		if(inputString == null || inputString.length < 2)
+			return Collections.emptyList();
+		
+		Map<String,List<String>> hm = new HashMap<String,List<String>>();
+		for(String s : inputString) {
+			char [] chararray = s.toCharArray();
+			Arrays.sort(chararray);
+			String key = String.valueOf(chararray);
+			if(!hm.containsKey(key))
+				hm.put(key, new ArrayList<>());
+			hm.get(key).add(s);
+		}
+		return new ArrayList<>(hm.values()); 
 	}
 	
 }

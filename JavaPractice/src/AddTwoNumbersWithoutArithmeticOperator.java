@@ -30,11 +30,13 @@ public class AddTwoNumbersWithoutArithmeticOperator {
 		while(i >= 0 || j >= 0 || sum == 1) {
 			
 			if(i >= 0) {
-				sum = sum + x.charAt(i) - '0';
+				//sum = sum + x.charAt(i) - '0';
+				sum = sum + Character.getNumericValue(x.charAt(i));
 			}
 			
 			if(j >= 0) {
-				sum = sum + y.charAt(j) - '0';
+				//sum = sum + y.charAt(j) - '0';
+				sum = sum + Character.getNumericValue(y.charAt(j));
 			}
 			
 			result = (char) (sum % 2 + '0') + result;

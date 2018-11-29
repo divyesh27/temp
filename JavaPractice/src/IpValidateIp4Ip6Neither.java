@@ -89,9 +89,9 @@ public class IpValidateIp4Ip6Neither {
 			return false;
 		char [] chars = token.toCharArray();
 		for(char c: chars) {
-			boolean isUpperCase = c>=65 && c<=70;
-			boolean isLowerCase = c>=97 && c<=102;
-			if(!(Character.isDigit(c) || isUpperCase || isLowerCase))
+			//boolean isUpperCase = c>=65 && c<=70;
+			//boolean isLowerCase = c>=97 && c<=102;
+			if(!(Character.isDigit(c) || Character.isUpperCase(c) || Character.isLowerCase(c)))
 				return false;
 		}
 		return true;

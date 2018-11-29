@@ -1,3 +1,4 @@
+import java.util.Arrays;
 
 public class RemoveDupSortedArrayInt {
 
@@ -5,15 +6,18 @@ public class RemoveDupSortedArrayInt {
 		// TODO Auto-generated method stub
 	//	int [] a = {1,1,1,2,3,4,5,6,7,7,7,7,8};
 		int [] a = {1,5,7,23,4,5,1,5,7,10,8};
-	//	System.out.println(RemoveDuplicates(a));
+		for(int i : RemoveDuplicates(a))
+			System.out.println(i);
+		System.out.println("***************");
 		System.out.println(RemovDup(a));
 		
 	}
 
-	public static int RemoveDuplicates(int[] num)
+	public static int[] RemoveDuplicates(int[] num)
 	{
 		if(num.length < 2)
-			return num.length;
+			return num;
+		Arrays.sort(num);
 		int dest = 1;
 		for(int i=1; i< num.length; i++)
 		{
@@ -21,8 +25,9 @@ public class RemoveDupSortedArrayInt {
 				num[dest++] = num[i];
 			
 		}
-		return dest;
+		return Arrays.copyOfRange(num, 0, dest);
 	}
+	
 	
 	private static int RemovDup(int[] num)
 	{

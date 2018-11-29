@@ -37,7 +37,7 @@ public class FindPlayerScoreHighestLowest {
 			if(score < getMinscore()) {
 				setMinscore(score);
 			}
-			else if(score > getMaxscore()) {
+			if(score > getMaxscore()) {
 				setMaxscore(score);
 			}
 		}
@@ -47,8 +47,10 @@ public class FindPlayerScoreHighestLowest {
 		// TODO Auto-generated method stub
 		HashMap<String, Players> hm = new HashMap<>();
 		FindPlayerScoreHighestLowest.Players pl = new FindPlayerScoreHighestLowest.Players("Divyesh", 5);
-		hm.put("Divyesh", pl);
+		if(!hm.containsKey("Divyesh"))
+			hm.put("Divyesh", pl);
 		System.out.println(hm.get("Divyesh").getMaxscore());
+		System.out.println(hm.get("Divyesh").getMinscore());
 		
 		
 	}

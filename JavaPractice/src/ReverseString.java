@@ -6,6 +6,7 @@ public class ReverseString {
 		System.out.println(RevString("Divyesh"));
 		System.out.println(revStringWithoutExtraMem("Divyesh Shah"));
 		System.out.println(revStringWithoutExtraMem1("Divyesh Shah"));
+		System.out.println(reverseStringAlphabetsOrLettersOnlyIgnoreNumbersSpecialChar("a3b5%dfy%67df^cs"));
 	}
 	private static String RevString(String str)
 	{
@@ -47,6 +48,37 @@ public class ReverseString {
 		str = str.substring(len);
 		
 		return str;
+	}
+	
+	private static String reverseStringAlphabetsOrLettersOnlyIgnoreNumbersSpecialChar(String input) {
+		
+		if(input == null || input.length() == 0)
+			return input;
+		
+		char[] result = input.toCharArray();
+		int start = 0;
+		int end = result.length-1;
+		char c = ' ';
+		while(start < end) {
+			
+			if(Character.isAlphabetic(result[start]) && Character.isAlphabetic(result[end])) {
+				c = result[start];
+				result[start] = result[end];
+				result[end] = c;
+				start++;
+				end--;
+			}
+			else if(Character.isAlphabetic(result[start]) && !Character.isAlphabetic(result[end]))
+				end--;
+			else if(!Character.isAlphabetic(result[start]) && Character.isAlphabetic(result[end]))
+				start++;
+			else {
+				start++;
+				end--;
+			}
+		}
+		
+		return String.valueOf(result);
 	}
 
 }

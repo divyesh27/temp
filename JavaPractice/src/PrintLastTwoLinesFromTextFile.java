@@ -7,7 +7,7 @@ public class PrintLastTwoLinesFromTextFile {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		printLastLines("//Users/divyesh.shah/Documents/workspace/JavaPractice/input.txt", 3);
+		printLastLines("//Users/divyesh.shah/Documents/workspace/JavaPractice/input.txt", 2);
 	}
 	
 	public static void printLastLines(String filename, int line) {
@@ -19,14 +19,17 @@ public class PrintLastTwoLinesFromTextFile {
 			randomAccessFile = new RandomAccessFile(filename,"r");
 			long lines = randomAccessFile.length()-1;
 			randomAccessFile.seek(lines);
-			for(long pointer = lines; pointer >=0 && count < line; pointer--) {
+			for(long pointer = lines; pointer >=0; pointer--) {
 				randomAccessFile.seek(pointer);
 				char c;
 				c = (char)randomAccessFile.read();
 				if(c == '\n') {
 					count++;
 				}
-				sb.append(c);
+				if(count < line)
+					sb.append(c);
+				else
+					break;
 			}
 			System.out.println(sb.reverse());
 			randomAccessFile.close();

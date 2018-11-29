@@ -14,7 +14,8 @@ public class FindSpecialCharRemoveChangeUpperNextChar {
 		boolean flag = false;
 		StringBuilder sb = new StringBuilder();
 		for(char c : inputVal.toCharArray()) {
-			if((c >= 27 && c <= 47) || (c >= 58 && c <= 63) ||(c >= 91 && c <= 96)) {
+			if(!Character.isLetterOrDigit(c)) {
+			//if((c >= 27 && c <= 47) || (c >= 58 && c <= 63) ||(c >= 91 && c <= 96)) {
 				flag = true;
 			}
 			else {

@@ -11,16 +11,17 @@ public class FindDuplicateFileInSystemWithSameContent {
 		*/
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-
+		String [] input = {"root/a 1.txt(abcd) 2.txt(efgh)", "root/c 3.txt(abcd)", "root/c/d 4.txt(efgh)", "root 4.txt(efgh)"};
+		System.out.println(findDuplicate(input));
 	}
 	
-	public List <List<String>> findDuplicate(String[] paths) {
+	public static List<List<String>> findDuplicate(String[] paths) {
 		HashMap <String, List<String>> map = new HashMap<>();
 		for(String path : paths) {
 			String[] values = path.split(" ");
 			for(int i=1; i< values.length; i++) {
 				String[] name = values[i].split("\\(");
-				name[1] = name[1].replaceAll(")","");
+				name[1] = name[1].replaceAll("\\)","");
 				List<String> list = map.getOrDefault(name[1], new ArrayList<String>());
 				list.add(values[0] + "/" + name[0]);
 				map.put(name[1], list);

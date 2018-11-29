@@ -23,6 +23,7 @@ public class FindMostRepeatedWordFromTextFile {
 			while(currentline != null) {
 				String[] words = currentline.toLowerCase().split(" ");
 				for(String word : words) {
+					
 					if(hm.containsKey(word)) {
 						hm.put(word, hm.get(word)+1);
 					}

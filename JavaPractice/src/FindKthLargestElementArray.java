@@ -9,7 +9,7 @@ public class FindKthLargestElementArray {
 		// TODO Auto-generated method stub
 		Integer [] num = {3,2,1,5,6,4};
 		//System.out.println(FindKthLargestElement(num,2));
-		//System.out.println(FindKthLargestNum(num,2));
+		System.out.println(FindKthLargestNum(num,2));
 		kLargest(num,3);
 	}
 	private static int FindKthLargestElement(Integer[] num, int k)

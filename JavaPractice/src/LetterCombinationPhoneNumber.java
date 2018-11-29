@@ -38,7 +38,7 @@ public class LetterCombinationPhoneNumber {
 		ans.add("");
 		for(int i=0; i<digits.length(); i++)
 		{
-			int x = Character.getNumericValue(digits.charAt(i));
+			int x = Character.getNumericValue(digits.charAt(i)); 
 			while(ans.peek().length() == i)
 			{
 				String t = ans.remove();

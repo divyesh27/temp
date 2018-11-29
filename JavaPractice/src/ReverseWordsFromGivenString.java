@@ -46,6 +46,7 @@ public class ReverseWordsFromGivenString {
 			charArray[start++] = charArray[end];
 			charArray[end--] = c;
 		}
-		return new String(charArray);
+		//return new String(charArray);  Can use both way
+		return String.valueOf(charArray);
 	}
 }

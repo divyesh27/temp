@@ -3,7 +3,7 @@ public class RotateArrayByGivenValue {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		int [] arr = {2,3,4,5,2};
-		for(int e : RotateByGivenNumber(arr,1))
+		for(int e : RotateByGivenNumber(arr,3))
 			System.out.print(e + " ");
 	}
 	/**
