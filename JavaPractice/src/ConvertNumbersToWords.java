@@ -1,7 +1,7 @@
 /**
  * This is incomplete code...
  * 
- * @author jinashah
+ * @author divyesh.shah
  *
  */
 public class ConvertNumbersToWords {

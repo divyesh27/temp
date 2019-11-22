@@ -52,7 +52,7 @@ public class BreakWordToFormSentenceFromDictionary {
 		if (str == null || str.length() < 1)
 			return str;
 		
-		StringBuffer strbuffer = new StringBuffer();
+		StringBuilder strbuffer = new StringBuilder();
 		for(int i=low; i < str.length(); i++) {
 			strbuffer.append(str.charAt(i));
 			if(dict.contains(strbuffer.toString())) {
