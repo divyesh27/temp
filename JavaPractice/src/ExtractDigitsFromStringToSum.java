@@ -5,10 +5,10 @@ public class ExtractDigitsFromStringToSum {
 
 	public static void ExtractDigitsToSum(String s) {
 		Pattern p = Pattern.compile("\\-?\\d+"); // - is to consider -(-ve) and ? is to check option if it is there or
-													// not,
-													// \\d is to consider any digit from 0-9 and then + will be for more
-													// then one
-													// another way to add can be "\\-?[0-9]+
+		// not,
+		// \\d is to consider any digit from 0-9 and then + will be for more
+		// then one
+		// another way to add can be "\\-?[0-9]+
 		Matcher m = p.matcher(s);
 		int sum = 0;
 		int n = 0;
@@ -48,7 +48,7 @@ public class ExtractDigitsFromStringToSum {
 					result = "";
 				}
 			}
-			
+
 		}
 		if(!result.isEmpty())
 			sum += Integer.parseInt(result);
@@ -58,11 +58,17 @@ public class ExtractDigitsFromStringToSum {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		/*
-		 * ExtractDigitsToSum("23adf5dsf4"); ExtractDigitsToSum("235a4");
-		 * ExtractDigitsToSum("2354a"); ExtractDigitsToSum("a2354");
-		 * ExtractDigitsToSum("a2a3a5a4a"); ExtractDigitsToSum("123a-bc-22");
-		 */
+
+		System.out.println("*** Extract Digits Method ***");
+		ExtractDigitsToSum("23adf5dsf4"); 
+		ExtractDigitsToSum("235a4");
+		ExtractDigitsToSum("2354a"); 
+		ExtractDigitsToSum("a2354");
+		ExtractDigitsToSum("a2a3a5a4a"); 
+		ExtractDigitsToSum("123a-bc-22");
+
+		System.out.println("\n*** ******** ***\n");
+		System.out.println("*** Add summation method ***");
 		System.out.println(addSummation("123abc45def6gh78"));
 		System.out.println(addSummation("23adf5dsf4"));
 		System.out.println(addSummation("235a4"));
