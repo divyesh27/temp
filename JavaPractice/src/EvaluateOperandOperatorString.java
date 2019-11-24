@@ -30,7 +30,7 @@ public class EvaluateOperandOperatorString {
 			}
 			else if(tokens[i] == ')')
 			{
-				while(operator.peek()!='(')
+				while(operator.peek()!='(' && !operator.isEmpty())
 					operand.push(Arithmetic(operand.pop(), operand.pop(), operator.pop()));
 				operator.pop();
 			}
@@ -57,6 +57,8 @@ public class EvaluateOperandOperatorString {
 			return false;
 		else if((op1 == '/' || op1 == '*') && (op2 == '+' || op2 == '-'))
 			return false;
+		else if((op2 == '(' || op2 == ')'))
+			return false;
 		return true;
 	}
 	public static int Arithmetic(int val2, int val1, char op)
@@ -78,12 +80,14 @@ public class EvaluateOperandOperatorString {
 	}
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
+		/*
 		System.out.println(Evaluate("10 + 2 * 6"));
 		System.out.println(Evaluate("100 * 2 + 12"));
+		*/
 		System.out.println(Evaluate("100 * ( 2 + 12 )" ));
 		System.out.println(Evaluate("100 * ( 2 + 12 ) / 14"));
-		System.out.println(Evaluate("10 + 2 * 6"));
+		//System.out.println(Evaluate("10 + 2 * 6"));
 		
-	}
+	}	
 
 }
