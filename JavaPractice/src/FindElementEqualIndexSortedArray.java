@@ -16,10 +16,10 @@ public class FindElementEqualIndexSortedArray {
 			int mid = (low + high) / 2;
 			if(mid == input[mid])
 				return mid;
-			else if(mid > input[mid])
-				return binarySearch(input,mid+1,high);
-			else
+			else if(mid <= input[mid])
 				return binarySearch(input,low,mid-1);
+			else
+				return binarySearch(input,mid+1,high);
 		}
 		return -1;
 	}

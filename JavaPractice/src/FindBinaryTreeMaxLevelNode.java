@@ -36,6 +36,7 @@ public class FindBinaryTreeMaxLevelNode {
 		node.right.right.right = bt.new TreeNode(-100);
 		node.left.left.left = bt.new TreeNode(10);
 		node.right.left.left = bt.new TreeNode(50);
+		node.right.right.right.right = bt.new TreeNode(150);
 		System.out.println(bt.FindMaxLevelNode(node));
 	}
 

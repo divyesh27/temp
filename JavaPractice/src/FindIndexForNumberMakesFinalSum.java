@@ -5,7 +5,14 @@ public class FindIndexForNumberMakesFinalSum {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-
+		int[] num = {2, 3, 64, 32, 67, 2, 6, 11, 4};
+		int sum = 5;
+		for(int i : twoSum(num, sum)) {
+			System.out.println(i);
+		}
+		for(int i : twoSumHash(num, sum)) {
+			System.out.println(i);
+		}
 	}
 	
 	static int[] twoSum(int[] num, int target) {
