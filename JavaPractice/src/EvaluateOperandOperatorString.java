@@ -86,6 +86,7 @@ public class EvaluateOperandOperatorString {
 		System.out.println(Evaluate("100 * ( 2 + 12 )" ));
 		System.out.println(Evaluate("100 * ( 2 + 12 ) / 14"));
 		System.out.println(Evaluate("10 + 2 * 6"));
+		System.out.println(Evaluate("3 * 3 / 3 + 3 - 3"));
 		
 	}	
 

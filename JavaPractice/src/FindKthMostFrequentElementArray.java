@@ -1,8 +1,10 @@
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
+import java.util.Comparator;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.PriorityQueue;
 
 
@@ -16,48 +18,42 @@ public class FindKthMostFrequentElementArray {
 		//int [] num = {1,1};
 		//int [] num = {1,1,1};
 		//int [] num = {1,1,1,1,1,1,1,1};
-		int [] num = {1,2,3,4,5,6};
+		int [] num = {1,1,1,2,2,3};
+		//int [] num = {1,2,3,4,5,6};
 		
 		//System.out.println(FindKthLargestElement(num,2));
 		//System.out.println(FindKthLargestNum(num,2));
-		System.out.println(FindKthMostFrequentElement(num,3));
+		//System.out.println(FindKthMostFrequentElement(num,3));
+		for(int i : findKthMostFrequentElement(num,2)) {
+			System.out.println(i);
+		}
 	}
-	private static List<Integer> FindKthMostFrequentElement(int[] num, int k)
-	{
-		List<Integer> res = new ArrayList<>();
-		//List<Integer>[] bucket = new List[num.length + 1];
-		ArrayList<Integer> al = new ArrayList<Integer>();
-		List<Integer>[] bucket = new List[num.length + 1];
-		if(num.length <=1)
-			return res;
+	
+	private static List<Integer> findKthMostFrequentElement(int [] num, int k){
 		
-		HashMap<Integer,Integer> hm = new HashMap<Integer,Integer>();
+		if(num == null || num.length < 1 || k == 0)
+			throw new IllegalArgumentException();
+		
+		Map<Integer, Integer> hm = new HashMap<>();
 		for(int i : num) {
-			if(!hm.containsKey(i))
-				hm.put(i, 1);
-			else 
-				hm.put(i, hm.get(i) + 1);
-		} 
-		
-		for(int key : hm.keySet()) {
-			int freq = hm.get(key);
-			if(bucket[freq] == null) {
-				bucket[freq] = new ArrayList<>();
-			}
-			System.out.println(freq);
-			System.out.println(bucket[freq].add(key));
-				
+			hm.put(i, hm.getOrDefault(i, 0) + 1);
 		}
 		
+		PriorityQueue<Map.Entry	<Integer,Integer>> pq = new PriorityQueue<>(Comparator.comparing(e -> e.getValue()));
 		
-		for(int pos = bucket.length - 1; pos >=0 && res.size() < k; pos--) {
-			if(bucket[pos]!=null) {
-				res.addAll(bucket[pos]);
+		for(Map.Entry<Integer, Integer> map : hm.entrySet()) {
+			pq.offer(map);
+			if(pq.size() > k) {
+				pq.poll();
 			}
 		}
-		for(int a : al)
-			System.out.println(a);
-		return res;
+		
+		List<Integer> list = new ArrayList<>();
+		while(pq.size() > 0) {
+			list.add(pq.poll().getKey());
+		}
+		Collections.reverse(list);
+		return list;
 	}
 	
 	 
