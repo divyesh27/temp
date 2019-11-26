@@ -8,10 +8,11 @@ public class PrintListOfFilesOfGivenFolderFindPattern implements Closeable {
 	public static void main(String[] args) throws IOException, InterruptedException{
 		
 		String s;
-		Process p = Runtime.getRuntime().exec("grep -rnw ./ -e 'sum'");
+		Process p = Runtime.getRuntime().exec("grep -rnw ./ -e sum");
+		int count=0;
 		try(BufferedReader br = new BufferedReader(new InputStreamReader(p.getInputStream()))) {
 			while((s = br.readLine()) != null) {
-				System.out.println("line" + s);
+				System.out.println("count" + count++ + "\tline" + s);
 			}
 			p.waitFor();
 			System.out.println("exit:" + p.exitValue());
