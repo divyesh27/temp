@@ -23,7 +23,7 @@ public class FindReplaceFinal {
 		int lastIndex=0;
 		int index=s1.indexOf(find);
 //
-		StringBuffer buffer=new StringBuffer();
+		StringBuilder buffer=new StringBuilder();
 		while(index!=-1)
 		{
 			//StringBuffer buffer=new StringBuffer();

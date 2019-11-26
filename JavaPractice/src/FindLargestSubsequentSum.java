@@ -6,7 +6,7 @@ public class FindLargestSubsequentSum {
 		int [] input = {-10,3,5,6,-10,8,2,7,9,-30, 3, 7};
 	//	int [] input = {1, 101, 10, 2, 3, 100,4};
 	//	int [] input = {4,6,1,3,8,4,6};
-	//	System.out.println(FindMaxSumSubsequence(input));
+		System.out.println(FindMaxSumSubsequence(input));
 		System.out.println(maxSum(input));
 		
 	}
