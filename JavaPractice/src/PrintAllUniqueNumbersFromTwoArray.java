@@ -3,7 +3,7 @@ public class PrintAllUniqueNumbersFromTwoArray {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		int[] numA = {2,4,5,7,8,9};
+		int[] numA = {2,4,5,7,8,9,33,32,2,5,6};
 		int[] numB = {1,2,6,7,10};
 		PrintUniqueNumbers(numA,numB);
 	}

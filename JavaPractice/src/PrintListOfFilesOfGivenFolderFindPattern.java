@@ -12,7 +12,7 @@ public class PrintListOfFilesOfGivenFolderFindPattern implements Closeable {
 		int count=0;
 		try(BufferedReader br = new BufferedReader(new InputStreamReader(p.getInputStream()))) {
 			while((s = br.readLine()) != null) {
-				System.out.println("count" + count++ + "\tline" + s);
+				System.out.println("count" + count++ + "\tline\t" + s);
 			}
 			p.waitFor();
 			System.out.println("exit:" + p.exitValue());
