@@ -38,9 +38,7 @@ public class ThreeTotalOfThreeValuesSumToZero {
 						high--;
 					else
 						low++;
-						
 				}
-				
 			}
 		}
 		return result;
