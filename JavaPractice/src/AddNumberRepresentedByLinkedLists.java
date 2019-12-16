@@ -89,6 +89,8 @@ public class AddNumberRepresentedByLinkedLists {
 		Node l1 = ab.new Node(7);
 		l1.next = ab.new Node(4);
 		l1.next.next = ab.new Node(7);
+		l1.next.next.next = ab.new Node(4);
+		l1.next.next.next.next = ab.new Node(2);
 		
 		Node l2 = ab.new Node(8);
 		l2.next = ab.new Node(6);
