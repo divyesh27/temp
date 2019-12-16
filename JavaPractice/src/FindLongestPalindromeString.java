@@ -22,6 +22,7 @@ public class FindLongestPalindromeString {
         System.out.println(LongestPalindrome("Hello how are you madam hope you are fine"));
         System.out.println(LongestPalindrome("abba madam you are malayalamabcbaabcba"));
         System.out.println(LongestPalindrome("abba madam you are malayalam"));
+    
 	}
 	private static String LongestPalindrome(String input)
 	{

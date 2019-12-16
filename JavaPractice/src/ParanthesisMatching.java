@@ -22,6 +22,8 @@ public class ParanthesisMatching {
 	{
 		if(input == null)
 			return false;
+		if(input.isEmpty())
+			return true;
 		Stack<Character> st = new Stack<Character>();
 		char[] ch = input.toCharArray();
 		

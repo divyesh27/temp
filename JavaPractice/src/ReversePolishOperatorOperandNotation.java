@@ -25,7 +25,7 @@ public class ReversePolishOperatorOperandNotation {
 				if (!stack.isEmpty()) {
 					int a = Integer.parseInt(stack.pop());
 					int b = Integer.parseInt(stack.pop());
-
+					
 					int index = operator.indexOf(t);
 					switch (index) {
 					case 0:

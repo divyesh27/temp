@@ -5,6 +5,7 @@ public class LetterCombinationPhoneNumber {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		System.out.println(letterCombination("23"));
+		LetterCombination("33");
 	}
 
 	private static List<String> LetterCombination(String digits)
@@ -25,9 +26,11 @@ public class LetterCombinationPhoneNumber {
 		map.put(8, "tuv");
 		map.put(9, "wxyz");
 		map.put(0, "");
+		map.put(2, "cde");
 		
-				
-		
+		for(int i : map.keySet()) {
+			System.out.println("Key " + i + " value "+ map.get(i));
+		}
 		return result;
 	}
 	
