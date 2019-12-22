@@ -26,7 +26,7 @@ public class ReverseString {
 			start ++;
 			end --;
 		}
-		return new String(ch);
+		return  String.valueOf(ch); // new String(ch);  
 	}
 
 	private static String revStringWithoutExtraMem(String str) {
