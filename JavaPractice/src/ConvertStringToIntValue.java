@@ -5,15 +5,17 @@ public class ConvertStringToIntValue {
 		System.out.println(convertStringToIntegerValues("1242"));
 		//System.out.println(convertStringToIntegerValues("    acdd 234324234"));
 		//System.out.println(convertStringToIntegerValues(" acdd 234324234"));
-		System.out.println(convertStringToIntegerValues("     21332 ad"));
+		//System.out.println(convertStringToIntegerValues("     21332 ad"));
+		System.out.println(convertStringToIntegerValues("     -21332"));
 	}
 
 	public static int convertStringToIntegerValues(String inputString) {
 
 		int negative = -1;
 		boolean flag = false;
-		inputString.trim();
-		if(inputString == null || inputString.length() < 1 || !Character.isDigit(inputString.charAt(0))) {
+		StringBuilder sb = new StringBuilder(inputString.trim());
+		System.out.println(sb);
+		if(inputString == null || inputString.length() < 1 || Character.isLetter(sb.charAt(0))) {
 			throw new IllegalArgumentException("Pass Valid input");
 		
 		}
@@ -25,7 +27,7 @@ public class ConvertStringToIntValue {
 		}
 		for(int i=0; i<inputCharArray.length; i++) {
 
-			if(Character.isAlphabetic(inputCharArray[i]))
+			if(Character.isAlphabetic(inputCharArray[i]) || Character.isLetter(inputCharArray[i]))
 				break;
 			int val = (inputCharArray[i]) - '0';
 			result = result*10 + val;

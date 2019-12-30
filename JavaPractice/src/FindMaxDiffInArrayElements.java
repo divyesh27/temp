@@ -23,6 +23,6 @@ public class FindMaxDiffInArrayElements {
 				minElement = inputArray[i];
 			}
 		}
-		return maxDiff <=0 ? -1 : maxDiff;
+		return maxDiff <= 0 ? -1 : maxDiff;
 	}
 }
