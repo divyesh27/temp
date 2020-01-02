@@ -55,7 +55,7 @@ public class HashMapNestedFindMinMaxValues {
 		for(Object o : hm.values()) {
 			if(o instanceof HashMap) {
 				Integer i = findMinHashMapNestedValue((HashMap<String, Object>)o);
-				if (i < min)
+				if (i < min && i != null)
 					min = i;
 			}
 			if(o != null && o instanceof Integer) {
