@@ -20,7 +20,6 @@ public class FindKthMostFrequentElementArray {
 		//int [] num = {1,1,1,1,1,1,1,1};
 		int [] num = {1,1,1,2,2,3};
 		//int [] num = {1,2,3,4,5,6};
-		
 		//System.out.println(FindKthLargestElement(num,2));
 		//System.out.println(FindKthLargestNum(num,2));
 		//System.out.println(FindKthMostFrequentElement(num,3));
@@ -55,6 +54,5 @@ public class FindKthMostFrequentElementArray {
 		Collections.reverse(list);
 		return list;
 	}
-	
 	 
 }
