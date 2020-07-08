@@ -1,9 +1,11 @@
 import java.io.BufferedReader;
+import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
 import java.io.RandomAccessFile;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Map.Entry;
 
 public class FindMostRepeatedWordFromTextFile {
 
@@ -18,7 +20,8 @@ public class FindMostRepeatedWordFromTextFile {
 		BufferedReader reader;
 		try {
 			
-			reader = new BufferedReader(new FileReader("//Users/divyesh.shah/Documents/workspace/JavaPractice/input.txt"));
+			File f = new File("//Users/divyesh.shah/Documents/workspace/JavaPractice/input.txt");
+			reader = new BufferedReader(new FileReader(f));
 			String currentline = reader.readLine();
 			while(currentline != null) {
 				String[] words = currentline.toLowerCase().split(" ");
@@ -39,6 +42,19 @@ public class FindMostRepeatedWordFromTextFile {
 					System.out.println("Key " + key + " - " + hm.get(key));
 				}
 			}
+			
+			int count = 0;
+			String maxOccurence = null;
+			
+			for(Entry<String, Integer> e : hm.entrySet()) {
+				if(e.getValue() > count) {
+					maxOccurence = e.getKey();
+					count = e.getValue();
+				}
+			}
+			
+			System.out.println(maxOccurence);
+			
 			reader.close();
 			
 		}

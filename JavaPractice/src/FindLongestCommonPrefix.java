@@ -7,8 +7,13 @@ public class FindLongestCommonPrefix {
 	//	FindLongCommonSubsequence("ABCDGH","AEDFHR");
 		String[] input = {"f","flower","flower","flower", "flower", "flowea"};
 		String[] input1 = {"dog","racecar","car"};
+		String[] input2 = {"maggi","magic","magical"};
 		System.out.println(FindLongCommonPrefixInString(input));
 		System.out.println(FindLongCommonPrefixInString(input1));
+		System.out.println(FindLongCommonPrefixInString(input2));
+		System.out.println(findLongestCommonPrefix(input));
+		System.out.println(findLongestCommonPrefix(input1));
+		System.out.println(findLongestCommonPrefix(input2));
 	}
 	public static String FindLongCommonPrefixInString(String [] str)
 	{
@@ -25,5 +30,27 @@ public class FindLongestCommonPrefix {
 		return prefix;
 		
 	}	
+	
+	public static String findLongestCommonPrefix(String[] inputString) {
+		
+		if(inputString == null || inputString.length < 2)
+			throw new IllegalArgumentException("Pass valid input");
+		
+		int max = inputString[0].length();
+		char [] comp = inputString[0].toCharArray();
+		for(int i=1 ; i<inputString.length; i++) {
+			char[] temp = inputString[i].toCharArray();
+			int j = 0;
+			int k = 0;
+			while(k < temp.length && k < max) {
+				if(temp[j] == comp[j])
+					j++;
+				k++;
+			}
+			if(j < max)
+				max = j;
+		}
+		return inputString[0].substring(0, max);
+	}
 	
 }

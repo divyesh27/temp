@@ -7,7 +7,7 @@ public class FindKthLargestElementArray {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		Integer [] num = {3,2,1,5,6,4};
+		Integer [] num = {13,2,1,5,6,4, -1,-2};
 		//System.out.println(FindKthLargestElement(num,2));
 		System.out.println(FindKthLargestNum(num,2));
 		kLargest(num,3);

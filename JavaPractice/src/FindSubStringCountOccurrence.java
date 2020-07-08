@@ -3,7 +3,7 @@ public class FindSubStringCountOccurrence {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		int count = CountSubString("abcdedfaafadfagafaeerw","aa");
+		int count = CountSubString("aabcdedfaafadfagafaeerwaa","aa");
 		System.out.println(count);
 
 	}
