@@ -7,7 +7,7 @@ In a given game there are 10 players(can grow more). Each individual will have t
 3) Get which player scored lowest
 4) Get which player scored highest
 5) Show the players scored from highest to lowest
-6) Show the players scored from lowest to highest(optional)
+6) Show the players scored from lowest to highest
 **/
 public class FindPlayerScoreHighestLowest {
 
