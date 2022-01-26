@@ -1,5 +1,14 @@
 import java.util.HashMap;
 
+/**
+In a given game there are 10 players(can grow more). Each individual will have there own score. What we are interested is
+1) Get score of any given player
+2) Get total score of all players
+3) Get which player scored lowest
+4) Get which player scored highest
+5) Show the players scored from highest to lowest
+6) Show the players scored from lowest to highest
+**/
 public class FindPlayerScoreHighestLowest {
 
 	public static class Players {
