@@ -4,6 +4,7 @@ import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
+import java.util.Map.Entry;
 import java.util.Set;
 
 public class FindPairInArrayTotalSumAndCount {
@@ -26,6 +27,20 @@ public class FindPairInArrayTotalSumAndCount {
 		}
 		System.out.println("***********************");
 		System.out.println(numberOfDistinctPairs(inputarr, sum));
+		
+		int[] array1 = {1, 3, 2, 2, 3};
+	    int targetSum1 = 4;
+	    int [] array2 = {2, 2, 2, 2, 2};
+	    int targetSum2 = 4;
+	    int [] array3 = {1, 3, 2, 2, 3, 1};
+	    int targetSum3 = 4;
+	    
+	    System.out.println("--------");
+	    printPairs(array1, targetSum1);
+	    System.out.println("--------");
+	    printPairs(array2, targetSum2);
+	    System.out.println("--------");
+	    printPairs(array3, targetSum3);
 		
 	}
 
@@ -74,4 +89,90 @@ public class FindPairInArrayTotalSumAndCount {
 		}
 		return uniquePairs.size();
 	}
+	
+	public static void printPairs(int[] array, int targetSum){
+		
+		 /*
+		  Given an unsorted array of integers and an integer number targetSum, find all pairs that sum up to the given number targetSum.
+
+		1. Sorting the array is not allowed.
+		2. Number can be used only once to be a pair
+		3. Duplicated pairs are possible
+		4. Time optimized
+
+
+		* Example 1
+		array = [1, 3, 2, 2, 3], targetSum = 4
+		print [1, 3], [2, 2]
+
+		* Example 2
+		array = [1, 3, 2, 2, 3, 1], targetSum = 4
+		print [1, 3], [2, 2], [1, 3]
+
+		* Example 3
+		array = [2, 2, 2, 2, 2], targetSum = 4
+		print [2, 2], [2, 2]
+
+
+
+		  Any Questions? 3 minutes
+
+
+
+		  Design Discussion: 10 minutes
+
+		  - Hashmap with key -> value to be 
+		  - Create a set with all unique numbers.
+		  - Array of booleans to flag the indexes that have been used.
+		  - 
+		*/
+		if (array == null || targetSum < 1)
+			return;
+
+		Map<Integer, Integer> map = new HashMap<>();
+		for (int i : array) {
+			map.put(i, map.getOrDefault(i,0) + 1);
+
+		}
+
+		//Map.Entry<Integer, Integer> kv = 
+
+		for (Entry<Integer, Integer> e : map.entrySet() ){
+			Integer key2 = targetSum - e.getKey();
+			Integer count1 =0;
+			Integer count2 =0;
+			// Handle the case when element is half the value of targetSum.
+			Integer threshold = 0;
+			if(e.getKey() == key2){
+				threshold = 1;
+			}
+			if(threshold == 1) {
+				count1 = e.getValue();
+				while(count1 > 1) {
+					System.out.println(e.getKey() + "," + key2);
+					count1-=2;
+				}
+			}
+			else if(map.containsKey(key2)) {
+				count1 = e.getValue();
+				count2 = map.get(key2);
+
+				if(count1 > threshold && count2 > threshold) {
+					map.put(e.getKey(), --count1);
+					map.put(key2, --count2);
+					System.out.println(e.getKey() + "," + key2);
+				}  
+
+			}
+		}
+	}
+	/**
+	Test with all duplicate values
+	Test with null input
+	Test with 0 taget value
+	Test with all 1 values
+	Test with all 0 values
+	Test with Integer boundary values +-32767
+
+	*/
 }
