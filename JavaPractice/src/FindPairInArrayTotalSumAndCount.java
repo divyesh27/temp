@@ -115,11 +115,8 @@ public class FindPairInArrayTotalSumAndCount {
 
 
 
-		  Any Questions? 3 minutes
-
-
-
-		  Design Discussion: 10 minutes
+		Any Questions? 3 minutes
+		Design Discussion: 10 minutes
 
 		  - Hashmap with key -> value to be 
 		  - Create a set with all unique numbers.
