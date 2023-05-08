@@ -64,13 +64,18 @@ public class FindPlayerScoreHighestToLowest_HighToLow_LowToHigh {
 		// TODO Auto-generated method stub
 		HashMap<String, Players> hm = new HashMap<>();
 		FindPlayerScoreHighestToLowest_HighToLow_LowToHigh.Players pl = new FindPlayerScoreHighestToLowest_HighToLow_LowToHigh.Players("Divyesh", 5);
+		FindPlayerScoreHighestToLowest_HighToLow_LowToHigh.Players p2 = new FindPlayerScoreHighestToLowest_HighToLow_LowToHigh.Players("Jinal", 15);
 		if(!hm.containsKey("Divyesh"))
 			hm.put("Divyesh", pl);
+		if(!hm.containsKey("Jinal"))
+			hm.put("Jinal", p2);
 		System.out.println(hm.get("Divyesh").getScore());
 		System.out.println(hm.get("Divyesh").getMaxscore());
 		System.out.println(hm.get("Divyesh").getMinscore());
-		if(!hm.containsKey("Jinal"))
-			hm.put("Jinal", pl);
+		System.out.println(hm.get("Jinal").getScore());
+		System.out.println(hm.get("Jinal").getMaxscore());
+		System.out.println(hm.get("Jinal").getMinscore());
+
 		
 		
 		

@@ -29,11 +29,6 @@ public class FindMthNodeFromLastNodeLinkList {
 		int count=0;
 		while(count < n)
 		{
-			if(firstPointer == null)
-			{	
-				System.out.println(count);
-				return;
-			}
 			count++;
 			firstPointer = firstPointer.next;
 		}

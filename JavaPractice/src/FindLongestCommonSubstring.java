@@ -6,7 +6,7 @@ public class FindLongestCommonSubstring {
 		
 		//System.out.println(FindLongCommSubstringInt("abcdperedfgwerasgdfsh","adgqtfbghfgaafrwelgdfglaewrdsaf"));
 		//System.out.println(FindLongCommSubstringInt("abcdperedfgwerasgdfsh","adgqtfbghfga"));
-		//System.out.println(FindLongCommSubstringInt("tesla","slate"));
+		System.out.println(FindLongCommSubstringInt("tesla","slate"));
 		//System.out.println(FindLongCommSubstringInt("xxxx","slate"));
 		System.out.println(FindLongCommSubstringInt("xxxxx","slate"));
 	}

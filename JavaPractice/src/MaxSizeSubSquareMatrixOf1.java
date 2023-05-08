@@ -22,6 +22,7 @@ public class MaxSizeSubSquareMatrixOf1 {
                 	  {0, 0, 0, 0, 0}};
 		
 		findMaxSubSquare(input);
+		findMaxSubSquare(M);
 
 	}
 	

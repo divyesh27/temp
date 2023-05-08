@@ -9,28 +9,28 @@ public class FindMaxValueFromGivenIntegerInput {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 
-		System.out.println(findMaxValueFromGivenInteger(1432));
-		System.out.println(findMaxValueFromGivenInteger(999));
-		System.out.println(findMaxValueFromGivenInteger(111));
-		System.out.println(findMaxValueFromGivenInteger(10));
-		System.out.println(findMaxValueFromGivenInteger(4321));
-		System.out.println(findMaxValueFromGivenInteger(12341583));
+		System.out.println(findMinOrMaxValueFromGivenInteger(1432));
+		System.out.println(findMinOrMaxValueFromGivenInteger(999));
+		System.out.println(findMinOrMaxValueFromGivenInteger(111));
+		System.out.println(findMinOrMaxValueFromGivenInteger(10));
+		System.out.println(findMinOrMaxValueFromGivenInteger(4321));
+		System.out.println(findMinOrMaxValueFromGivenInteger(12341583));
 		
 	}
 	
-	public static int findMaxValueFromGivenInteger(int input) {
+	public static int findMinOrMaxValueFromGivenInteger(int input) {
 		
 		if(input < 1)
 			throw new IllegalArgumentException("Pass valid input");
 		
 		//List<Integer> ch = new ArrayList<>();
 		Comparator<Integer> intCompare = new Comparator<Integer>() {
-			
+
 			@Override
 			public int compare(Integer o1, Integer o2) {
 				// TODO Auto-generated method stub
-				return o2 - o1;  // Comparator to compare value for the order o1 - o2 will make 
-				// it in asc and o2-o1 will be in desc.
+				return o2 - o1;  // Comparator to compare value for the order o1 - o2 will make
+				//return o1 - o2;// it in asc and o2-o1 will be in desc.
 			}
 		};
 		PriorityQueue<Integer> pq = new PriorityQueue<>(intCompare);

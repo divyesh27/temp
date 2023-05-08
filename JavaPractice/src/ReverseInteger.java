@@ -11,6 +11,7 @@ public class ReverseInteger {
 		System.out.println(reverseInteger(8765));
 		System.out.println(reverseInteger(4421));
 		System.out.println(reverseInteger(222));
+		System.out.println(reverseInteger(-1002));
 	}
 	public static int reverseInteger(int input) {
 		
@@ -21,14 +22,15 @@ public class ReverseInteger {
 		boolean flag = false;
 		if(input < 1)
 			flag = true;
-		
+
 		int reverse = 0;
 		while(input != 0) {
 			reverse = reverse * 10 + input % 10;
 			input = input / 10;
 		}
-		if(flag)
-			reverse = reverse * neg;
+		if(flag) {
+			return reverse = -reverse * -1;
+		}
 		return reverse;
 	}
 

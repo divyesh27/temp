@@ -8,17 +8,17 @@ public class FindSubCharactersFromAnotherString {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		for(Character c : findSubChar("apple","pear"))
-			System.out.println(c);
-		
+			System.out.print(c + "\t");
+		System.out.println();
 		for(Character c : findSubChar("lock","door"))
-			System.out.println(c);
-		
-		for(Character c : findSubChar("foo","bar"))
-			System.out.println(c);
-		
+			System.out.print(c + "\t");
+		System.out.println();
+		for(Character c : findSubChar("foo","barf"))
+			System.out.print(c + "\t");
+		System.out.println();
 		for(Character c : findSubChar("foo",""))
-			System.out.println(c);
-
+			System.out.print(c + "\t");
+		System.out.println();
 	}
 	
 	@SuppressWarnings("unchecked")

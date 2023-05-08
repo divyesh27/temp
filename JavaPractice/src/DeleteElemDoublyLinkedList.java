@@ -70,7 +70,8 @@ public class DeleteElemDoublyLinkedList {
 				DoubleNode temp = new DoubleNode(data);
 				if(head == prev)
 				{
-					temp.next = prev.next;
+					//temp.next = prev.next;
+					temp.next = current;
 					current.prev = temp;
 					temp.prev = prev;
 					head = temp;

@@ -29,7 +29,7 @@ public class BinaryTreeCheckTreeIsBalanced {
 		node.right.right.right = new TreeNode(1);
 		node.left.left.left = new TreeNode(7);
 		node.right.right.left = new TreeNode(5);
-		
+		System.out.println(findBalanceTree(node));
 	}
 	
 	public static int findBalanceTree(TreeNode root) {
@@ -46,9 +46,10 @@ public class BinaryTreeCheckTreeIsBalanced {
 			return Integer.MIN_VALUE;
 		
 		int heightdiff = leftheight - rightheight;
-		if(Math.abs(heightdiff) > 1)
+		if(Math.abs(heightdiff) > 1) {
+			System.out.println(heightdiff);
 			return Integer.MIN_VALUE;
-		
+		}
 		else
 			return Math.max(leftheight, rightheight) + 1;
 			

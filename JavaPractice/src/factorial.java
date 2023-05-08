@@ -4,7 +4,8 @@ public class factorial {
 	public static void main(String[] args) {
 		int n=4;
 		System.out.println(computeFactorial(n));
-		System.out.println(bigFactCompute(20));
+		System.out.println(bigFactCompute(5));
+		System.out.println(factorial(8));
 	}
 	public static int computeFactorial(int n)
 	{
@@ -20,5 +21,13 @@ public class factorial {
 			f = f.multiply(BigInteger.valueOf(i));
 		}
 		return f;
+	}
+
+	public static int factorial(int n) {
+		int i, result = 1;
+		for(i = 2; i<=n; i++) {
+			result *= i;
+		}
+		return result;
 	}
 }

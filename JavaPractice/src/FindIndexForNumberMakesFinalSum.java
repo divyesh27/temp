@@ -7,15 +7,15 @@ public class FindIndexForNumberMakesFinalSum {
 		// TODO Auto-generated method stub
 		int[] num = {2, 3, 64, 32, 67, 2, 6, 11, 4};
 		int sum = 5;
-		for(int i : twoSum(num, sum)) {
+		for(int i : twoTargetSum(num, sum)) {
 			System.out.println(i);
 		}
-		for(int i : twoSumHash(num, sum)) {
+		for(int i : twoSumHashFinalTarget(num, sum)) {
 			System.out.println(i);
 		}
 	}
 	
-	static int[] twoSum(int[] num, int target) {
+	static int[] twoTargetSum(int[] num, int target) {
 		for(int i=0; i < num.length; i++) {
 			for(int j = i+1; j< num.length; j++) {
 				if(num[j] == target - num[i]) {
@@ -26,7 +26,7 @@ public class FindIndexForNumberMakesFinalSum {
 		throw new IllegalArgumentException("No two sum solution");
 	}
 	
-	static int[] twoSumHash(int [] num, int target) {
+	static int[] twoSumHashFinalTarget(int [] num, int target) {
 		Map<Integer, Integer> mp = new HashMap<>();
 		for(int i=0; i<num.length; i++) {
 			int comp = target - num[i];

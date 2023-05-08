@@ -9,6 +9,7 @@ public class FindLongestCommonSubsequence {
 		FindLongCommonSubsequence("longestcommonsubsequence","dynamicprogramming");
 		FindLongCommonSubsequence("alphabetagamma","applemangopineapple");
 		FindLongCommonSubsequence("xxxxxx","yyyy");
+		System.out.println("Longest common subsequence " + longestCommonSubsequence("abcetd", "cssftdsgsrhd"));
 		
 	}
 	public static String FindLongCommonSubsequence(String str1, String str2)
@@ -63,5 +64,29 @@ public class FindLongestCommonSubsequence {
 		 System.out.println(sb.reverse());
 		 return sb.reverse().toString();
 		//return null;
+	}
+
+	private static int longestCommonSubsequence(String text1, String text2) {
+		int m = text1.length();
+		int n = text2.length();
+
+		// Initialize the dp array with 0s
+		int[][] dp = new int[m+1][n+1];
+
+		// Fill the dp array using dynamic programming
+		for (int i = 1; i <= m; i++) {
+			for (int j = 1; j <= n; j++) {
+				if (text1.charAt(i-1) == text2.charAt(j-1)) {
+					// If the characters match, add 1 to the LCS of the substrings
+					dp[i][j] = dp[i-1][j-1] + 1;
+				} else {
+					// If the characters don't match, take the maximum LCS of the substrings
+					dp[i][j] = Math.max(dp[i-1][j], dp[i][j-1]);
+				}
+			}
+		}
+
+		// Return the length of the LCS of the two strings
+		return dp[m][n];
 	}
 }

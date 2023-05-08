@@ -15,6 +15,7 @@ public class FindCharMatchToGivenStringJewelStone {
 		System.out.println(FindMostOccurCharFromString("SAAbbbbcbsbdddcbbbc","dsa"));
 	}
 		
+	// Find most occurrence of character from a string
 	private static int FindMostOccurCharFromString(String inputString, String compare)
 	{
 		if(compare == null || inputString == null || compare.isEmpty() || compare.isEmpty() || inputString.length() < 1 || compare.length() < 1)

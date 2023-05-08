@@ -17,7 +17,7 @@ public class EvaluateOperandOperatorString {
 			
 			if(tokens[i] >= '0' && tokens[i] <= '9')
 			{
-				StringBuffer sb = new StringBuffer();
+				StringBuilder sb = new StringBuilder();
 				while(i< tokens.length && tokens[i] >= '0' && tokens[i] <= '9')
 				{
 					sb.append(tokens[i++]);
@@ -36,7 +36,7 @@ public class EvaluateOperandOperatorString {
 			}
 			else if(tokens[i] == '+' || tokens[i] == '-' || tokens[i] == '*' || tokens[i]== '/')
 			{
-				while(!operator.isEmpty() && isPrecendance(tokens[i],operator.peek()))
+				while(!operator.isEmpty() && isPrecedance(tokens[i],operator.peek()))
 				{
 					operand.push(Arithmetic(operand.pop(),operand.pop(),operator.pop()));
 				}
@@ -51,7 +51,7 @@ public class EvaluateOperandOperatorString {
 		}
 		return operand.pop();
 	}
-	public static boolean isPrecendance(char op1, char op2)
+	public static boolean isPrecedance(char op1, char op2)
 	{
 		if(op1 == '(' || op2 == ')')
 			return false;

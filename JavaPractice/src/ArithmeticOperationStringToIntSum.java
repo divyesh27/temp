@@ -1,3 +1,4 @@
+import java.util.HashSet;
 import java.util.Stack;
 
 
@@ -6,8 +7,8 @@ public class ArithmeticOperationStringToIntSum {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 
-		String input = "2-4+1";
-	//	String input = "-3+55";
+	//	String input = "2-4+1";
+		String input = "-3+55";
 	//	String input = "11+2";
 	//	String input = "1+-2";
 	//	String input = "1--2";
@@ -19,9 +20,11 @@ public class ArithmeticOperationStringToIntSum {
 		
 	//	System.out.println(ArithOperationStringToIntSum(input));
 		System.out.println(ArithOpStringToIntSum(input));
+		System.out.println(ArithmeticOperatorExpression(input));
 	}
 
 	
+	// TODO - Add proper stack for pushing into all values
 	private static int ArithOpStringToIntSum(String input)
 	{
 		if(input == null || input.length() ==0 || input.length() < 3 || input.charAt(input.length() -1) == '-' || input.charAt(input.length() -1) == '+')
@@ -76,4 +79,30 @@ public class ArithmeticOperationStringToIntSum {
 		
 		return returnValue;
 	}
+
+	public static int ArithmeticOperatorExpression(String expression) {
+		char[] tokens = expression.toCharArray();
+		int result = 0;
+		int num = 0;
+
+		for (int i = 0; i < tokens.length; i++) {
+			if (Character.isDigit(tokens[i])) {
+				num = num * 10 + tokens[i] - '0';
+			}
+			if (!Character.isDigit(tokens[i]) || i <= tokens.length - 1) {
+				if (tokens[i] == '+') {
+					result += num;
+				} else if (tokens[i] == '-') {
+					result -= num;
+				} else if (tokens[i] == '*') {
+					result *= num;
+				} else if (tokens[i] == '/') {
+					result /= num;
+				}
+			}
+		}
+		return result;
+	}
+
+
 }

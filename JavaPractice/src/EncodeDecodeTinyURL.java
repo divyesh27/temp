@@ -64,6 +64,7 @@ public class EncodeDecodeTinyURL {
 		tinyURLEncodeDecode("https://www.abcdefghijladfafacsdcas.com");
 		tinyURLEncodeDecode("www.timeofindiaahmedabadtobombay.com");
 		tinyURLEncodeDecode("www.vyavsaividhyapratishthanrajkotaliasvvp.com");
+		tinyURLEncodeDecode("https://leetcode.com/problems/design-tinyurl");
 		tinyURLEncodeDecode("www.om");
 		
 

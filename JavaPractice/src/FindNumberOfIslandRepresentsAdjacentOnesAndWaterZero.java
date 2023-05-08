@@ -61,6 +61,4 @@ public class FindNumberOfIslandRepresentsAdjacentOnesAndWaterZero {
 		dfs(inputarray,row,col-1);
 		dfs(inputarray,row,col+1);
 	}
-	
-
 }

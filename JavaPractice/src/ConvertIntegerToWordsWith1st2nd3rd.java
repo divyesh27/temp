@@ -10,6 +10,10 @@ public class ConvertIntegerToWordsWith1st2nd3rd {
 		convertIntToWords(111);
 		convertIntToWords(112);
 		convertIntToWords(113);
+		convertIntToWords(121);
+		convertIntToWords(122);
+		convertIntToWords(141);
+		convertIntToWords(142);
 	}
 	
 	public static void convertIntToWords(int input) {

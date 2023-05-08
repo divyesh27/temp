@@ -2,6 +2,7 @@ public class PowerOf2_PowerFunc {
 	public static void main(String[] args) {
 		int n=24;
 		System.out.println(powerOfTwo(n));
+		System.out.println(power(n,7));
 	}
 	public static boolean powerOfTwo(int n) {
 		if(n == 0)

@@ -18,6 +18,10 @@ public class RearrangeOddEvenZeroNumbers {
 		
 		RearrangeOddZeroEvenSort(arr);
 		print(arr);
+		rearrangeArray(arr);
+		print(arr);
+		reArrangeOddLeftEvenRigh(arr);
+		print(arr);
 		
 	}
 	// Re arrange odd and even on each side and if we encounter zero then
@@ -56,7 +60,53 @@ public class RearrangeOddEvenZeroNumbers {
 		}
 		return inputArray;
 	}
-	
+
+	public static void rearrangeArray(int[] arr) {
+		int left = 0, right = arr.length - 1;
+		while (left < right) {
+			while (arr[left] % 2 != 0 && left < right) {
+				left++;
+			}
+			while (arr[right] % 2 == 0 && left < right) {
+				right--;
+			}
+			if (left < right) {
+				int temp = arr[left];
+				arr[left] = arr[right];
+				arr[right] = temp;
+				left++;
+				right--;
+			}
+		}
+	}
+
+	private static int[] reArrangeOddLeftEvenRigh(int[] inputArray) {
+		int size = inputArray.length;
+		if(inputArray == null || size < 1)
+			throw new IllegalArgumentException("Pass valid input");
+
+		int oddIndex = 0;
+		int tempVal;
+
+		for(int i = 0; i < size; i++) {
+			if(inputArray[i] % 2 != 0) {
+				tempVal = inputArray[i];
+				inputArray[i] = inputArray[oddIndex];
+				inputArray[oddIndex] = tempVal;
+				oddIndex++;
+			}
+		}
+		for(int i=0; i < oddIndex-1; i++) {
+			if(inputArray[i] == 0) {
+				tempVal = inputArray[oddIndex-1];
+				inputArray[oddIndex-1] = inputArray[i];
+				inputArray[i] = tempVal;
+				oddIndex--;
+			}
+		}
+		return inputArray;
+	}
+
 	public static void print(int[] arr) {
 		for (int i=0; i<arr.length; i++)
             System.out.print(arr[i]+" ");

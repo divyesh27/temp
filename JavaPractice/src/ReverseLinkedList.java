@@ -48,7 +48,7 @@ public class ReverseLinkedList {
         Node head = reverse(current);
         current.next = node; 
         
-        return head; 
+        return head;
     }
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
@@ -60,8 +60,8 @@ public class ReverseLinkedList {
 		
 		System.out.println("Original Linked list is :");
         rl.printlist(head);
-       // head = rl.reverse(head);
-        head = rl.ReverseList(head);
+        head = rl.reverse(head);
+        //head = rl.ReverseList(head);
         System.out.println("");
         System.out.println("Reversed linked list : ");
         rl.printlist(head);

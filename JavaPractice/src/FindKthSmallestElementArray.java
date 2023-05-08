@@ -7,8 +7,8 @@ public class FindKthSmallestElementArray {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		int [] num = {3,2,1,5,6,4};
-	//	System.out.println(findKthSmallestElement(num,2));
-		System.out.println(findKthSmallestNum(num,2));
+		System.out.println(findKthSmallestElement(num,4));
+		System.out.println(findKthSmallestNum(num,4));
 	}
 	private static int findKthSmallestElement(int[] num, int k)
 	{

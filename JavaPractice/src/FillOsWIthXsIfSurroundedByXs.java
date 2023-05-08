@@ -1,6 +1,44 @@
 
 public class FillOsWIthXsIfSurroundedByXs {
 
+	/*
+	Given a matrix where every element is either ‘O’ or ‘X’, replace ‘O’ with ‘X’ if surrounded by ‘X’. A ‘O’ (or a set of ‘O’) is considered to be by surrounded by ‘X’ if there are ‘X’ at locations just below, just above, just left and just right of it.
+
+Examples:
+
+Input: mat[M][N] =  {{'X', 'O', 'X', 'X', 'X', 'X'},
+                     {'X', 'O', 'X', 'X', 'O', 'X'},
+                     {'X', 'X', 'X', 'O', 'O', 'X'},
+                     {'O', 'X', 'X', 'X', 'X', 'X'},
+                     {'X', 'X', 'X', 'O', 'X', 'O'},
+                     {'O', 'O', 'X', 'O', 'O', 'O'},
+                    };
+Output: mat[M][N] =  {{'X', 'O', 'X', 'X', 'X', 'X'},
+                      {'X', 'O', 'X', 'X', 'X', 'X'},
+                      {'X', 'X', 'X', 'X', 'X', 'X'},
+                      {'O', 'X', 'X', 'X', 'X', 'X'},
+                      {'X', 'X', 'X', 'O', 'X', 'O'},
+                      {'O', 'O', 'X', 'O', 'O', 'O'},
+                    };
+Input: mat[M][N] =  {{'X', 'X', 'X', 'X'}
+                     {'X', 'O', 'X', 'X'}
+                     {'X', 'O', 'O', 'X'}
+                     {'X', 'O', 'X', 'X'}
+                     {'X', 'X', 'O', 'O'}
+                    };
+
+Input: mat[M][N] =  {{'X', 'X', 'X', 'X'}
+                     {'X', 'X', 'X', 'X'}
+                     {'X', 'X', 'X', 'X'}
+                     {'X', 'X', 'X', 'X'}
+                     {'X', 'X', 'O', 'O'}
+                    };
+         This is mainly an application of Flood-Fill algorithm. The main difference here is that a ‘O’ is not replaced by ‘X’ if it lies in region that ends on a boundary. Following are simple steps to do this special flood fill.
+
+		Traverse the given matrix and replace all ‘O’ with a special character ‘-‘.
+		Traverse four edges of given matrix and call floodFill(‘-‘, ‘O’) for every ‘-‘ on edges. The remaining ‘-‘ are the characters that indicate ‘O’s (in the original matrix) to be replaced by ‘X’.
+		Traverse the matrix and replace all ‘-‘s with ‘X’s.
+	*/
 	
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub

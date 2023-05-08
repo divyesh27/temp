@@ -99,13 +99,13 @@ public class LRUCacheHashMap {
 		LRUCacheHashMap lru = new LRUCacheHashMap(capacity);
 		lru.put(1, 1);
 		lru.put(2, 2);
-		lru.get(1);
+		System.out.println(lru.get(1));
 		lru.put(3, 3);
-		lru.get(2);
+		System.out.println(lru.get(2));
 		lru.put(4, 4);
-		lru.get(1);
-		lru.get(3);
-		lru.get(4);
+		System.out.println(lru.get(1));
+		System.out.println(lru.get(3));
+		System.out.println(lru.get(4));
 		
 	}
 

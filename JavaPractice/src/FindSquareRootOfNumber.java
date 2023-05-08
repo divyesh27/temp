@@ -3,8 +3,8 @@ public class FindSquareRootOfNumber {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		//System.out.println(mySqrt(4));
-		//System.out.println(findSqrt(4));
+		System.out.println(mySqrt(4));
+		System.out.println(findSqrt(4));
 		System.out.println(floorSqrt(16));
 		System.out.println(findRoot(15));
 	}

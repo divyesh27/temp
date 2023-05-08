@@ -8,6 +8,10 @@ public class AdditiveNumber {
 		System.out.println(isAdditiveNumber1("199100199"));
 		System.out.println(isAdditiveNumber1("1234a5"));
 
+        System.out.println(isAdditiveNumber("112358"));
+        System.out.println(isAdditiveNumber("199100199"));
+        System.out.println(isAdditiveNumber("1234a5"));
+
 	}
 	
 	static boolean isAdditiveNumber(String num) {

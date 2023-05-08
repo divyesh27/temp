@@ -17,12 +17,11 @@ public class Fibonacci {
 		 
 		 
 		 //---------
-		 
+		 System.out.println("\n");
 		 for(int i=1;i<10;i++)
 		 {
 			 System.out.println(recuresiveFibo(i) +"");
 		 }
-		 
 		 System.out.println(evenFibonumber(400));
 }
 
