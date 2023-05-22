@@ -10,10 +10,9 @@ public class ReverseString {
 	}
 	private static String RevString(String str)
 	{
-		if(str == null)
-			return null;
-		if(str.length() == 1)
+		if(str == null || str.length() == 1)
 			return str;
+
 		char [] ch = str.toCharArray();
 		int start = 0;
 		int end = ch.length-1;
