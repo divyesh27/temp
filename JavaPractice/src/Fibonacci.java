@@ -23,6 +23,11 @@ public class Fibonacci {
 			 System.out.println(recuresiveFibo(i) +"");
 		 }
 		 System.out.println(evenFibonumber(400));
+
+		 System.out.println();
+		 System.out.println(dynamicProgramFibonacci(19));
+		 System.out.println();
+		 System.out.println(fibonacciIterative(19));
 }
 
 	private static int recuresiveFibo(int i) {
@@ -55,5 +60,29 @@ public class Fibonacci {
 			sum = sum + even2;
 		}
 		return sum;
+	}
+	private static int dynamicProgramFibonacci(int n) {
+		int [] lookup = new int[n + 2];
+		int i;
+		lookup[0] = 0;
+		lookup[1] = 1;
+
+		for(i = 2; i <= n; i++) {
+			lookup[i] = lookup[i-1] + lookup[i-2];
+		}
+		return lookup[n];
+
+	}
+
+	private static int fibonacciIterative(int n) {
+		int [] f = new int [n+1];
+		int i;
+		if (n <= 1)
+			return n;
+		f[0] = 0; f[1] = 1;
+		for(i = 2; i <= n; i++) {
+			f[i] = f[i-1] + f[i-2];
+		}
+		return f[n];
 	}
 }

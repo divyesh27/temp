@@ -9,7 +9,10 @@ public class ArithmeticOperationStringToIntSum {
 
 	//	String input = "2-4+1";
 		String input = "-3+55";
-	//	String input = "11+2";
+		String [] tokens = new String[] {"2","1","+","3","*"};
+		String [] tokens1 = new String[] {"4","13","5","/","+"};
+		String [] tokens2 = new String[] {"10","6","9","3","+","-11","*","/","*","17","+","5","+"};
+ 	//	String input = "11+2";
 	//	String input = "1+-2";
 	//	String input = "1--2";
 	//	String input = "1-+2";
@@ -21,6 +24,9 @@ public class ArithmeticOperationStringToIntSum {
 	//	System.out.println(ArithOperationStringToIntSum(input));
 		System.out.println(ArithOpStringToIntSum(input));
 		System.out.println(ArithmeticOperatorExpression(input));
+		System.out.println(ArithmeticEvalOperator(tokens));
+		System.out.println(ArithmeticEvalOperator(tokens1));
+		System.out.println(ArithmeticEvalOperator(tokens2));
 	}
 
 	
@@ -104,5 +110,42 @@ public class ArithmeticOperationStringToIntSum {
 		return result;
 	}
 
+	public static int ArithmeticEvalOperator(String[] tokens) {
 
+
+			Stack<Integer> stack = new Stack<>();
+
+			for (String token : tokens) {
+				if (isOperator(token)) {
+					int operand2 = stack.pop();
+					int operand1 = stack.pop();
+					int result = performOperation(token, operand1, operand2);
+					stack.push(result);
+				} else {
+					int operand = Integer.parseInt(token);
+					stack.push(operand);
+				}
+			}
+
+			return stack.pop();
+		}
+
+		private static boolean isOperator(String token) {
+			return token.equals("+") || token.equals("-") || token.equals("*") || token.equals("/");
+		}
+
+		private static int performOperation(String operator, int operand1, int operand2) {
+			switch (operator) {
+				case "+":
+					return operand1 + operand2;
+				case "-":
+					return operand1 - operand2;
+				case "*":
+					return operand1 * operand2;
+				case "/":
+					return operand1 / operand2;
+				default:
+					throw new IllegalArgumentException("Invalid operator: " + operator);
+			}
+		}
 }
