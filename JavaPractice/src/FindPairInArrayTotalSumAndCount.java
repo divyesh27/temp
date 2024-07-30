@@ -1,11 +1,5 @@
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 import java.util.Map.Entry;
-import java.util.Set;
 
 public class FindPairInArrayTotalSumAndCount {
 
@@ -41,7 +35,9 @@ public class FindPairInArrayTotalSumAndCount {
 	    printPairs(array2, targetSum2);
 	    System.out.println("--------");
 	    printPairs(array3, targetSum3);
-		
+
+		System.out.println("-----------");
+		System.out.println(findPairValueToSum(array1, targetSum1));
 	}
 
 	public static int[] findPairValueToSumAndPrintCount(int[] arr1, int sum) {
@@ -65,6 +61,27 @@ public class FindPairInArrayTotalSumAndCount {
 		return arr;
 	}
 
+	public static List<List<Integer>> findPairValueToSum(int[] arr1, int sum) {
+		if (arr1 == null || arr1.length < 2 || sum <= 1)
+			throw new IllegalArgumentException("Values can't be null or less than 2 or sum can't be less than 1");
+
+		HashSet<Integer> val = new HashSet<>();
+		List<List<Integer>> result = new ArrayList<>();
+
+		int tempval;
+		for (int i = 0; i < arr1.length; i++) {
+
+			tempval = sum - arr1[i];
+			if (tempval >= 0 && val.contains(tempval)) {
+				result.add(Collections.singletonList(arr1[i])); // or print value over here or add List
+				result.add(Collections.singletonList(tempval));
+			}
+			val.add(arr1[i]);
+		}
+		System.out.println("No of pairs found " + result.size() / 2);
+		//int[] arr = result.stream().mapToInt(i -> i).toArray();
+		return result;
+	}
 	static int numberOfDistinctPairs(int[] array, long sum) {
 
 		if (array.length < 2 || sum < 1)
