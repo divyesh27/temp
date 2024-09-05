@@ -1,5 +1,6 @@
 from typing import Set
 
+
 def find_most_occur_char_from_string(input_string: str, compare: str) -> int:
     # Input validation
     if not input_string or not compare:
@@ -13,6 +14,7 @@ def find_most_occur_char_from_string(input_string: str, compare: str) -> int:
             count += 1
 
     return count
+
 
 # Example usage
 if __name__ == "__main__":
