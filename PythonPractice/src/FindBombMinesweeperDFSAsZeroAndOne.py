@@ -1,6 +1,7 @@
 import random
 from typing import List, Optional
 
+
 def main():
     row = 6
     col = 4
@@ -16,6 +17,7 @@ def main():
     traverse_board(board)
     print_board(board)
 
+
 def print_board(board: Optional[List[List[int]]]) -> None:
     if not board:
         print("Board is empty or null")
@@ -24,6 +26,7 @@ def print_board(board: Optional[List[List[int]]]) -> None:
     for row in board:
         print("\t".join(map(str, row)))
     print("***********************")
+
 
 def plant_bombs(board: List[List[int]], bomb: int) -> None:
     if not board or bomb <= 0:
@@ -41,6 +44,7 @@ def plant_bombs(board: List[List[int]], bomb: int) -> None:
             board[row][col] = -1
             count += 1
 
+
 def traverse_board(board: List[List[int]]) -> None:
     if not board:
         return
@@ -53,6 +57,7 @@ def traverse_board(board: List[List[int]]) -> None:
             if board[i][j] == -1:
                 continue
             update_value(board, i, j)
+
 
 def update_value(board: List[List[int]], row: int, col: int) -> None:
     if not board:
@@ -68,6 +73,7 @@ def update_value(board: List[List[int]], row: int, col: int) -> None:
                 count += 1
     board[row][col] = count
 
+
 def dfs(board: List[List[int]], row: int, col: int) -> None:
     if row < 0 or col < 0 or row >= len(board) or col >= len(board[0]):
         return
@@ -81,6 +87,7 @@ def dfs(board: List[List[int]], row: int, col: int) -> None:
     dfs(board, row + 1, col + 1)
     dfs(board, row - 1, col + 1)
     dfs(board, row + 1, col - 1)
+
 
 if __name__ == "__main__":
     main()
