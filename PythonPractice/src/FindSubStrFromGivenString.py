@@ -1,7 +1,7 @@
 #  Find the Index of the First Occurrence in a String
 
 class FindSubStrFromGivenString:
-    def strStr(haystack: str, needle: str) -> int:
+    def strStr(self, haystack: str, needle: str) -> int:
         if haystack is None or needle is None:
             raise ValueError ("Pass valid input")
 
@@ -9,6 +9,7 @@ class FindSubStrFromGivenString:
 
 
 if __name__ == "__main__":
-    print(FindSubStrFromGivenString.strStr("sadbutsad", "sad"))
-    print(FindSubStrFromGivenString.strStr("leetcode", "leeto"))
-    print(FindSubStrFromGivenString.strStr("sadbutsad", "but"))
+    fs = FindSubStrFromGivenString()
+    print(fs.strStr("sadbutsad", "sad"))
+    print(fs.strStr("leetcode", "leeto"))
+    print(fs.strStr("sadbutsad", "but"))
