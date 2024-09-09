@@ -4,8 +4,6 @@ class FindSubStrFromGivenString:
     def strStr(haystack: str, needle: str) -> int:
         if haystack is None or needle is None:
             raise ValueError ("Pass valid input")
-        # if len(needle) > len(haystack):
-        #     raise ValueError("Pass valid input")
 
         return haystack.find(needle)
 
